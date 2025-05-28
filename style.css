@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #e8f5e9);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* added some padding for mobile */
+}
+
+h1 {
+    font-size: 60px;
+    color: #0F9D58;
+    letter-spacing: 6px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+#heading-container {
+    margin-bottom: 20px;
+}
+
+#main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.box {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1;
+    min-width: 330px;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* added box-shadow transition */
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* deeper shadow on hover */
+}
+
+.box .heading {
+    margin-bottom: 15px;
+}
+
+.box h2 {
+    color: #0F9D58;
+    font-size: 24px;
+    border-bottom: 2px solid #0F9D58;
+    padding-bottom: 8px;
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.row, .column {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+input[type="text"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease; /* smooth border color transition */
+}
+
+input[type="text"]:focus, select:focus, textarea:focus {
+    border-color: #0F9D58;
+}
+
+textarea {
+    height: 200px;
+    resize: none;
+}
+
+#submit {
+    background-color: #0F9D58;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit:hover {
+    background-color: #0c8650;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+    cursor: pointer; /* cursor pointer for better UX */
+    accent-color: #0F9D58; /* modern way to style radio */
+}
+
+/* Fix radio label color change on checked */
+input[type="radio"]:checked + label {
+    color: #0F9D58;
+    font-weight: 500;
+}
+
+/* Wrap radio input and label inside a flex container to align properly */
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+label {
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#status {
+    color: #999;
+    font-style: italic;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+        letter-spacing: 3px;
+    }
+
+    #main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        max-width: 100%;
+        min-width: unset;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+}
